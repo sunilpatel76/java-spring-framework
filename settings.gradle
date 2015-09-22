@@ -1,3 +1,3 @@
 rootProject.name = 'java-spring-framework'
-include 'web-application'
+include 'web-application', 'selenium-web'
 

@@ -1,15 +1,15 @@
 package aaradhya.patel.application.page;
 
 
+import aaradhya.patel.application.framework.Page;
 import org.openqa.selenium.By;
-import org.springframework.stereotype.Component;
 
-@Component
+
 public class LoginPage {
     private By text_userName = By.xpath("");
 
     public void loginNextGen(String userName, String passWd){
-        System.out.println(this.getClass().toString());
-
+        Page.browser("Chrome").navigate("");
+        Page.webEdit(text_userName).replaceKeys("spatel@securustechnologies.com");
     }
 }

@@ -17,7 +17,7 @@ public class LoginPageTest extends AbstractTestNGSpringContextTests{
 
     @Test
     public void loginPageTest(){
-        loginPage.loginNextGen("", "");
+//        loginPage.loginNextGen("", "");
     }
 
 }
