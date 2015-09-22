@@ -1,0 +1,3 @@
+rootProject.name = 'java-spring-framework'
+include 'web-application'
+
