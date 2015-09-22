@@ -1,0 +1,16 @@
+group 'aaradhya.patel.java-spring-framework'
+version '1.0-SNAPSHOT'
+
+apply plugin: 'java'
+
+sourceCompatibility = 1.8
+
+repositories {
+    mavenCentral()
+}
+
+
+dependencies {
+
+    compile 'org.seleniumhq.selenium:selenium-server:2.47.1'
+}
