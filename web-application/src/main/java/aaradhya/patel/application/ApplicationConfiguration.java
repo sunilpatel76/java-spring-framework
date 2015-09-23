@@ -1,11 +1,13 @@
-package aaradhya.patel.application.page.config;
+package aaradhya.patel.application;
 
 
 import aaradhya.patel.application.page.LoginPage;
+import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.context.annotation.*;
 
 @Configuration
-public class NextGenConfiguration {
+@EnableAutoConfiguration
+public class ApplicationConfiguration {
 
     @Bean
     public LoginPage loginPage(){

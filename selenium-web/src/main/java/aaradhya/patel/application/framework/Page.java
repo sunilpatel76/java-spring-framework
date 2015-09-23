@@ -33,6 +33,11 @@ public abstract class Page {
         }
         driver().get(url);
     }
+    public static void driverQuit(){
+        if (driver() != null){
+            driver().quit();
+        }
+    }
 
     public static WebEdit webEdit(final By by){
         WebElement webElement = null;
@@ -63,6 +68,5 @@ public abstract class Page {
     public static WebDriver driver(){
         return threadLocal.get();
     }
-
 
 }

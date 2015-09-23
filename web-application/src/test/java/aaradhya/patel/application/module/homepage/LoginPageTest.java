@@ -1,23 +1,38 @@
 package aaradhya.patel.application.module.homepage;
 
 
+import aaradhya.patel.application.framework.Page;
 import aaradhya.patel.application.page.LoginPage;
-import aaradhya.patel.application.page.config.NextGenConfiguration;
+import aaradhya.patel.application.ApplicationConfiguration;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.SpringApplicationConfiguration;
+import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Service;
 import org.springframework.test.context.testng.AbstractTestNGSpringContextTests;
+import org.testng.annotations.AfterClass;
+import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
 
-@SpringApplicationConfiguration(classes = NextGenConfiguration.class)
+@SpringApplicationConfiguration(classes = ApplicationConfiguration.class)
+@Service
 public class LoginPageTest extends AbstractTestNGSpringContextTests{
 
     @Autowired
     LoginPage loginPage;
 
+    @BeforeClass
+    public void setUp(){
+    }
+
     @Test
     public void loginPageTest(){
-//        loginPage.loginNextGen("", "");
+        loginPage.loginNextGen("", "");
+    }
+
+    @AfterClass
+    public void tearDown(){
+        Page.driverQuit();
     }
 
 }
