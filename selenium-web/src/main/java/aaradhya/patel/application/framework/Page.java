@@ -1,7 +1,10 @@
 package aaradhya.patel.application.framework;
 
 import aaradhya.patel.application.framework.keyword.*;
+import aaradhya.patel.application.framework.logger.TestLogger;
 import com.gargoylesoftware.htmlunit.ElementNotFoundException;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.*;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -11,6 +14,7 @@ import java.io.Serializable;
 
 public abstract class Page {
     private static ThreadLocal<WebDriver> threadLocal = new ThreadLocal<WebDriver>();
+    private static TestLogger logger = new TestLogger("SUNIL");
 
     private static final int MAX_WAIT = 60;
 
@@ -42,6 +46,7 @@ public abstract class Page {
     public static WebEdit webEdit(final By by){
         WebElement webElement = null;
         try {
+            logger.logInfo("sdsadsadsadsadsa");
             webElement = (new WebDriverWait(driver(), MAX_WAIT, 1000))
                     .until(ExpectedConditions.presenceOfElementLocated(by));
 

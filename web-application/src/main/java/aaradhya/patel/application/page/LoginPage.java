@@ -7,10 +7,11 @@ import org.springframework.stereotype.Component;
 
 @Component
 public class LoginPage {
-    private By text_userName = By.xpath("");
+    private By text_userName = By.xpath("//*[@title='Type your email address']");
 
     public void loginNextGen(String userName, String passWd){
         Page.browser("Chrome").navigate("https://securustech.net/friends");
-        Page.webEdit(text_userName).replaceKeys("spatel@securustechnologies.com");
+        Page.webEdit(text_userName).replaceKeys(userName);
+
     }
 }
