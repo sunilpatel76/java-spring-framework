@@ -12,6 +12,5 @@ public class LoginPage {
     public void loginNextGen(String userName, String passWd){
         Page.browser("Chrome").navigate("https://securustech.net/friends");
         Page.webEdit(text_userName).replaceKeys(userName);
-
     }
 }

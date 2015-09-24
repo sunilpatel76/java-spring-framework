@@ -4,9 +4,6 @@ import org.apache.logging.log4j.Level;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
-/**
- * Created by Sunil on 9/23/2015.
- */
 public class TestLogger {
     protected Logger logger;
     private String loggerName;
