@@ -4,7 +4,7 @@ import aaradhya.patel.application.framework.Page;
 import org.openqa.selenium.WebElement;
 
 
-public class WebLink extends Page {
+public class WebLink {
     private WebElement webElement;
 
     public WebLink(WebElement element){
@@ -14,9 +14,9 @@ public class WebLink extends Page {
     public void click(){
         this.webElement.click();
     }
-
     public String getText(){
         return this.webElement.getText().trim();
     }
+
 
 }
