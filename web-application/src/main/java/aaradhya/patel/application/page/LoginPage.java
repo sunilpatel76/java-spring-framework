@@ -5,12 +5,14 @@ import aaradhya.patel.application.framework.Page;
 import org.openqa.selenium.By;
 import org.springframework.stereotype.Component;
 
-@Component
 public class LoginPage {
-    private By text_userName = By.xpath("");
+    By text_userName = By.xpath("//*[@id='username']");
+    By text_passWord = By.xpath(".//*[@id='password']");
+    By button_login = By.xpath("//button[text()='Login']");
 
     public void loginNextGen(String userName, String passWd){
-        Page.browser("Chrome").navigate("https://securustech.net/friends");
-        Page.webEdit(text_userName).replaceKeys("spatel@securustechnologies.com");
+        Page.webEdit(text_userName).sendKeys(userName);
+        Page.webEdit(text_passWord).sendKeys(passWd);
+
     }
 }

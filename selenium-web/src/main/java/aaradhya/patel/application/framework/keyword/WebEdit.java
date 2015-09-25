@@ -1,9 +1,8 @@
 package aaradhya.patel.application.framework.keyword;
 
-import aaradhya.patel.application.framework.Page;
 import org.openqa.selenium.WebElement;
 
-public class WebEdit extends Page{
+public class WebEdit {
 
     private WebElement webElement;
 
