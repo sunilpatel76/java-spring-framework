@@ -13,6 +13,8 @@ public class LoginPage {
     public void loginNextGen(String userName, String passWd){
         Page.webEdit(text_userName).sendKeys(userName);
         Page.webEdit(text_passWord).sendKeys(passWd);
+        Page.webButton(button_login).scrollIntoView().click();
 
     }
+
 }

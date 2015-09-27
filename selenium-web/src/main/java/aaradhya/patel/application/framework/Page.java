@@ -1,5 +1,6 @@
 package aaradhya.patel.application.framework;
 
+import aaradhya.patel.application.framework.keyword.WebButton;
 import aaradhya.patel.application.framework.keyword.WebEdit;
 import aaradhya.patel.application.framework.keyword.WebLink;
 import aaradhya.patel.application.framework.logger.TestLogger;
@@ -58,7 +59,7 @@ public abstract class Page {
     }
 
 
-    private static WebDriver driver(){
+    public static WebDriver driver(){
         return threadLocal.get();
     }
 
@@ -81,10 +82,21 @@ public abstract class Page {
 
             highlightElement(driver(), webElement);
         }catch (ElementNotFoundException e){
-            //logger.logInfo(by.toString() +", presence of element is missing from the current page");
         }
         return new WebEdit(webElement);
     }
+    public static WebButton webButton(final By by){
+        WebElement webElement = null;
+        try {
+            webElement = (new WebDriverWait(driver(), MED_WAIT, 1000))
+                    .until(ExpectedConditions.elementToBeClickable(by));
+            highlightElement(driver(), webElement);
+        }catch (ElementNotFoundException e){
+
+        }
+        return new WebButton(webElement);
+    }
+
 
     private static void highlightElement(WebDriver driver, WebElement element){
         if (driver() != null)

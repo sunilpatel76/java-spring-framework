@@ -10,6 +10,7 @@ public class TestLogger {
 
     public TestLogger(String loggerName){
         setLoggerName(loggerName);
+        setLogger("TestName");
     }
 
     private void setLoggerName(String loggerName){
