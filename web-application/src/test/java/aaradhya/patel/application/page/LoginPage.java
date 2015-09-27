@@ -3,7 +3,6 @@ package aaradhya.patel.application.page;
 
 import aaradhya.patel.application.framework.Page;
 import org.openqa.selenium.By;
-import org.springframework.stereotype.Component;
 
 public class LoginPage {
     By text_userName = By.xpath("//*[@id='username']");
@@ -14,7 +13,6 @@ public class LoginPage {
         Page.webEdit(text_userName).sendKeys(userName);
         Page.webEdit(text_passWord).sendKeys(passWd);
         Page.webButton(button_login).scrollIntoView().click();
-
     }
 
 }

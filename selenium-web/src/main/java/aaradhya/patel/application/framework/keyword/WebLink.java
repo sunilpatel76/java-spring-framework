@@ -1,7 +1,10 @@
 package aaradhya.patel.application.framework.keyword;
 
 import aaradhya.patel.application.framework.Page;
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
+
+import java.util.NoSuchElementException;
 
 
 public class WebLink {
@@ -12,7 +15,7 @@ public class WebLink {
     }
 
     public void click(){
-        this.webElement.click();
+            this.webElement.click();
     }
     public String getText(){
         return this.webElement.getText().trim();

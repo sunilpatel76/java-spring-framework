@@ -2,7 +2,9 @@ package aaradhya.patel.application.test.homepage;
 
 import aaradhya.patel.application.AbstractWebApplication;
 import aaradhya.patel.application.framework.Page;
+import aaradhya.patel.application.page.DashboardPage;
 import aaradhya.patel.application.page.LoginPage;
+import org.openqa.selenium.By;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import org.testng.annotations.AfterClass;
@@ -15,6 +17,9 @@ public class LoginPageTest extends AbstractWebApplication {
     @Autowired
     LoginPage loginPage;
 
+    @Autowired
+    DashboardPage dashboardPage;
+
     @BeforeClass
     public void setUp(){
         Page.browser(webBrowser).navigate(applicationURL);
@@ -22,7 +27,9 @@ public class LoginPageTest extends AbstractWebApplication {
 
     @Test
     public void loginPageTest(){
-        loginPage.loginNextGen("spatel@securus.com", "Password1");
+        loginPage.loginNextGen(userName, passWd);
+        dashboardPage.navigateCommunicationRecords();
+
 
     }
 

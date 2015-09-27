@@ -8,9 +8,10 @@ import org.springframework.test.context.testng.AbstractTestNGSpringContextTests;
 import org.testng.annotations.BeforeClass;
 
 @ContextConfiguration(classes={ApplicationConfiguration.class})
-public abstract class AbstractWebApplication extends ApplicationExecutionListener{
+public abstract class AbstractWebApplication extends AbstractTestNGSpringContextTests{
     public String webBrowser;
     public String applicationURL;
+    public String userName, passWd;
 
 
     @Autowired
@@ -20,6 +21,8 @@ public abstract class AbstractWebApplication extends ApplicationExecutionListene
     public void loadInitConfig(){
         webBrowser= environment.getProperty("application.browser");
         applicationURL = environment.getProperty("application.URL");
+        userName= environment.getProperty("application.default.user");
+        passWd= environment.getProperty("application.user.passwd");
     }
 
 
