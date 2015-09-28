@@ -5,6 +5,7 @@ import aaradhya.patel.application.framework.Page;
 import org.openqa.selenium.By;
 
 public class LoginPage {
+
     By text_userName = By.xpath("//*[@id='username']");
     By text_passWord = By.xpath(".//*[@id='password']");
     By button_login = By.xpath("//button[text()='Login']");
