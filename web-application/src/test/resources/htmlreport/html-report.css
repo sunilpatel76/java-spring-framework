@@ -1,98 +1,59 @@
-body {
+body{
     margin: 0 0 5px 5px;
 }
-
-.top-banner-root {
-    background-color: #0066ff;
-    color: #fff;
-    font-family: Times;
-    height: 45px;
+.header{
+    border: 1px dotted;
+    background-color: beige;
     left: 0;
-    margin: 0 0 5px;
     padding: 5px;
     position: absolute;
+    height: 45px;
     right: 0;
     text-align: center;
-    top: 0;
 }
-.top-banner-title-font {
-    font-size: 25px;
-}
-
-.navigator-root {
-    bottom: 0;
+.left-navigation{
     left: 0;
+    bottom: 0;
     overflow-y: auto;
     position: absolute;
-    top: 60px;
     width: 400px;
-    border: 1px;
+    /*background-color: burlywood;*/
+    top: 60px;
 }
-
-.navigator-suite-header {
-    background-color: #deb887;
+.left-navigation-header{
+    background-color: #DEB887;
     font-size: 22px;
-    margin: 0 10px 5px 0;
     text-align: center;
+    margin: 0 10px 5px 0;
+}
+.collapse-all{
+    float: right;
+    padding: 5px;
+}
+.test-suite{
+    border-radius: 7px;
+    border: 1px solid;
 }
 
-.suite {
-    background-color: #fff8dc;
-    margin: 0 10px 10px 0;
-}
-
-.rounded-window {
-    border-radius: 10px;
-    border-style: solid;
-    border-width: 1px;
-}
-
-.wrapper {
+.wrapper{
     bottom: 0;
     left: 400px;
-    overflow: auto;
-    position: absolute;
+    overflow-y: auto;
+    /*background-color: aqua;*/
     right: 0;
+    position: absolute;
     top: 60px;
 }
-
-.rounded-window-top {
-    border-style: solid;
-    border-top-left-radius: 10px;
-    border-top-right-radius: 10px;
-    border-width: 1px;
-    overflow: auto;
-}
-.main-panel-header {
-    background-color: #9fb4d9;
-    font-family: monospace;
+.main-panel-header{
+    background-color: #9FB4D9;
+    padding: 5px;
+    /*font-family: monospace;*/
     font-size: 18px;
-    padding: 5px;
 }
 
-.rounded-window-bottom {
-    border-bottom-left-radius: 10px;
-    border-bottom-right-radius: 10px;
-    border-style: solid;
-    border-width: 0 1px 1px;
+.rounded-window-top{
+    border-top-left-radius: 7px;
+    border-top-right-radius: 7px;
+    border: 1px solid;
     overflow: auto;
-}
-.main-panel-content {
-    background-color: #dee8fc;
-    margin-bottom: 10px;
-    padding: 5px;
-}
-
-
-.method-content {
-    border-style: solid;
-    border-width: 0 0 1px;
-    padding-bottom: 5px;
-    width: 80%;
-}
-
-
-.method-name {
-    font-family: monospace;
-    font-size: 12px;
 }
