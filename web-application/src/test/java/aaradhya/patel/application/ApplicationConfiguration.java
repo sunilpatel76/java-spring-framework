@@ -2,13 +2,13 @@ package aaradhya.patel.application;
 
 import aaradhya.patel.application.page.DashboardPage;
 import aaradhya.patel.application.page.LoginPage;
-import org.springframework.context.annotation.Bean;
-import org.springframework.context.annotation.Configuration;
-import org.springframework.context.annotation.PropertySource;
+import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
+import org.springframework.context.annotation.*;
 import org.springframework.context.support.PropertySourcesPlaceholderConfigurer;
+import org.springframework.test.context.ContextConfiguration;
 
 @Configuration
-@PropertySource(value = "classpath:application.properties")
+@ComponentScan("aaradhya.patel.application")
 public class ApplicationConfiguration {
 
     @Bean

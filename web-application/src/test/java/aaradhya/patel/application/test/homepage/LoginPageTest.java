@@ -4,14 +4,15 @@ import aaradhya.patel.application.AbstractWebApplication;
 import aaradhya.patel.application.framework.Page;
 import aaradhya.patel.application.page.DashboardPage;
 import aaradhya.patel.application.page.LoginPage;
-import org.openqa.selenium.By;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
-
+@Component
 public class LoginPageTest extends AbstractWebApplication {
 
     @Autowired
@@ -27,8 +28,15 @@ public class LoginPageTest extends AbstractWebApplication {
 
     @Test
     public void loginPageTest(){
+
+        Logger logger= LogManager.getLogger("");
+
+//        LogMessage.logInfo();
+//        LogMessage.logError();
+//        LogMessage.logReport();
         loginPage.loginNextGen(userName, passWd);
         dashboardPage.navigateCommunicationRecords();
+
 
 
     }

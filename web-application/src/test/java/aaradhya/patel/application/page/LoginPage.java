@@ -3,7 +3,9 @@ package aaradhya.patel.application.page;
 
 import aaradhya.patel.application.framework.Page;
 import org.openqa.selenium.By;
+import org.springframework.stereotype.Component;
 
+@Component
 public class LoginPage {
 
     By text_userName = By.xpath("//*[@id='username']");

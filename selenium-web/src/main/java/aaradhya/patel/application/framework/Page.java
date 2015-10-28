@@ -84,11 +84,13 @@ public abstract class Page {
     public static WebEdit webEdit(final By by){
         WebElement webElement = null;
         try {
+
             webElement = (new WebDriverWait(driver(), MED_WAIT, 1000))
                     .until(ExpectedConditions.presenceOfElementLocated(by));
 
             highlightElement(driver(), webElement);
         }catch (ElementNotFoundException e){
+
         }
         return new WebEdit(webElement);
     }
@@ -103,7 +105,6 @@ public abstract class Page {
         }
         return new WebButton(webElement);
     }
-
 
     private static void highlightElement(WebDriver driver, WebElement element){
         if (driver() != null)

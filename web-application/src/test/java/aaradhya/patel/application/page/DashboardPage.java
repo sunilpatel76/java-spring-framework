@@ -5,7 +5,8 @@ import org.openqa.selenium.By;
 
 public class DashboardPage {
 
-    By link_search = By.xpath("//a[@data-toggle='dropdown']//div[text()='Search']");
+    private static final By link_search = By.xpath("//a[@data-toggle='dropdown']//div[text()='Search']");
+
 
     public void navigateCommunicationRecords(){
         Page.webLink(link_search).click();

@@ -21,8 +21,9 @@ dependencies {
     compile 'org.springframework:spring-core:4.2.1.RELEASE'
     compile 'org.springframework:spring-test:4.2.1.RELEASE'
 
-    //compile 'org.springframework.boot:spring-boot:1.2.6.RELEASE'
-    //compile 'org.springframework.boot:spring-boot-autoconfigure:1.2.6.RELEASE'
+    compile 'org.springframework.boot:spring-boot-starter:1.2.7.RELEASE'
+    compile 'org.springframework.boot:spring-boot-autoconfigure:1.2.7.RELEASE'
+
 
 
 }
