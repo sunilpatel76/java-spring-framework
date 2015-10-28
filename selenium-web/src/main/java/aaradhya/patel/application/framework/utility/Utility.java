@@ -23,4 +23,8 @@ public abstract class Utility {
         return ((randomInt -1) == -1) ? randomInt : randomInt-1;
     }
 
+    public static String generateEmailAddress(){
+        return getRandomString(5)+ "." + getRandomString(5) + "@dummy.com";
+    }
+
 }

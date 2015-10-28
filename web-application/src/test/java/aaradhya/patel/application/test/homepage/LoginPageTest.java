@@ -1,12 +1,13 @@
 package aaradhya.patel.application.test.homepage;
 
 import aaradhya.patel.application.AbstractWebApplication;
+import aaradhya.patel.application.elements.AccountSetup;
 import aaradhya.patel.application.framework.Page;
 import aaradhya.patel.application.framework.utility.Utility;
 import aaradhya.patel.application.page.DashboardPage;
+import aaradhya.patel.application.elements.Enroll;
+import aaradhya.patel.application.elements.Header;
 import aaradhya.patel.application.page.LoginPage;
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import org.testng.annotations.AfterClass;
@@ -28,10 +29,16 @@ public class LoginPageTest extends AbstractWebApplication {
     }
 
     @Test
-    public void loginPageTest(){
+    public void loginPageTest (){
+        String emailAddress = Utility.generateEmailAddress();
+        Page.webLink(Header.LINK_ENROLL).click();
+        Page.webButton(Enroll.BUTTON_NEXT).click();
 
-        //loginPage.loginNextGen(userName, passWd);
-        //dashboardPage.navigateCommunicationRecords();
+        Page.webEdit(AccountSetup.INPUT_EMAIL).sendKeys(emailAddress);
+        Page.webEdit(AccountSetup.INPUT_RE_EMAIL).sendKeys(emailAddress);
+
+
+        System.out.println("");
 
     }
 

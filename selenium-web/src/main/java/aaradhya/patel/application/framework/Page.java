@@ -34,6 +34,7 @@ public abstract class Page {
     private static final int MED_WAIT = 30;
     private static final Logger logger = LogManager.getLogger(Page.class);
 
+
     public static Page browser(final String browser){
         return new PageBrowser(browser);
     }

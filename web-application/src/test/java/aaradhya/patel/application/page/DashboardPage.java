@@ -5,12 +5,12 @@ import org.openqa.selenium.By;
 
 public class DashboardPage {
 
-    private static final By link_search = By.xpath("//a[@data-toggle='dropdown']//div[text()='Search']");
-
+    private static final By LINK_SEARCH = By.xpath("//a[@data-toggle='dropdown']//div[text()='Search']");
 
     public void navigateCommunicationRecords(){
-        Page.webLink(link_search).click();
-        Page.webLink(link_search).getText();
+        Page.webLink(LINK_SEARCH).click();
+        Page.webLink(LINK_SEARCH).getText();
     }
+
 
 }
