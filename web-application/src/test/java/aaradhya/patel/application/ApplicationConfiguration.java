@@ -8,7 +8,7 @@ import org.springframework.context.support.PropertySourcesPlaceholderConfigurer;
 import org.springframework.test.context.ContextConfiguration;
 
 @Configuration
-@ComponentScan("aaradhya.patel.application")
+@PropertySource(value = "classpath:application.properties")
 public class ApplicationConfiguration {
 
     @Bean

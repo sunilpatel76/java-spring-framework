@@ -16,6 +16,7 @@ public class LoginPage {
         Page.webEdit(text_userName).sendKeys(userName);
         Page.webEdit(text_passWord).sendKeys(passWd);
         Page.webButton(button_login).scrollIntoView().click();
+
     }
 
 }

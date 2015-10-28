@@ -2,6 +2,7 @@ package aaradhya.patel.application.test.homepage;
 
 import aaradhya.patel.application.AbstractWebApplication;
 import aaradhya.patel.application.framework.Page;
+import aaradhya.patel.application.framework.utility.Utility;
 import aaradhya.patel.application.page.DashboardPage;
 import aaradhya.patel.application.page.LoginPage;
 import org.apache.logging.log4j.LogManager;
@@ -29,15 +30,8 @@ public class LoginPageTest extends AbstractWebApplication {
     @Test
     public void loginPageTest(){
 
-        Logger logger= LogManager.getLogger("");
-
-//        LogMessage.logInfo();
-//        LogMessage.logError();
-//        LogMessage.logReport();
-        loginPage.loginNextGen(userName, passWd);
-        dashboardPage.navigateCommunicationRecords();
-
-
+        //loginPage.loginNextGen(userName, passWd);
+        //dashboardPage.navigateCommunicationRecords();
 
     }
 

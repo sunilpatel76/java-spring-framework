@@ -3,16 +3,20 @@ package aaradhya.patel.application.framework;
 import aaradhya.patel.application.framework.keyword.WebButton;
 import aaradhya.patel.application.framework.keyword.WebEdit;
 import aaradhya.patel.application.framework.keyword.WebLink;
+import aaradhya.patel.application.framework.keyword.WebList;
 import aaradhya.patel.application.framework.logger.TestLogger;
 import com.gargoylesoftware.htmlunit.ElementNotFoundException;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+import org.omg.CORBA.PUBLIC_MEMBER;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.support.ui.ExpectedCondition;
 import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.io.Serializable;
@@ -104,6 +108,16 @@ public abstract class Page {
 
         }
         return new WebButton(webElement);
+    }
+    public static WebList webList(final By by){
+        WebElement webElement = null;
+        try {
+            webElement = driver().findElement(by);
+            highlightElement(driver(), webElement);
+        }catch (ElementNotFoundException e){
+
+        }
+        return new WebList(webElement);
     }
 
     private static void highlightElement(WebDriver driver, WebElement element){
