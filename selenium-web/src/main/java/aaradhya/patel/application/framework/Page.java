@@ -4,38 +4,34 @@ import aaradhya.patel.application.framework.keyword.WebButton;
 import aaradhya.patel.application.framework.keyword.WebEdit;
 import aaradhya.patel.application.framework.keyword.WebLink;
 import aaradhya.patel.application.framework.keyword.WebList;
-import aaradhya.patel.application.framework.logger.TestLogger;
 import com.gargoylesoftware.htmlunit.ElementNotFoundException;
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
-import org.omg.CORBA.PUBLIC_MEMBER;
+import org.apache.log4j.LogManager;
+import org.apache.log4j.Logger;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.support.ui.ExpectedCondition;
 import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.io.Serializable;
 import java.util.List;
 import java.util.NoSuchElementException;
 import java.util.concurrent.TimeUnit;
-import java.util.concurrent.TimeoutException;
 
 public abstract class Page {
 
     private static ThreadLocal<WebDriver> threadLocal = new ThreadLocal<WebDriver>();
-//    public static TestLogger logger = new TestLogger("SUNIL");
+    private static final Logger logger = LogManager.getLogger(Page.class);
+
     private static final int MAX_WAIT = 45;
     private static final int MIN_WAIT = 15;
     private static final int MED_WAIT = 30;
-    private static final Logger logger = LogManager.getLogger(Page.class);
 
 
     public static Page browser(final String browser){
+        logger.error("XXX browser");
         return new PageBrowser(browser);
     }
 
@@ -75,6 +71,7 @@ public abstract class Page {
     }
 
     public static WebLink webLink(final By by){
+        logger.info("INFO");
         List<WebElement> webElement = null;
         try {
             webElement=(new WebDriverWait(driver(), MAX_WAIT, 1000))
@@ -82,6 +79,7 @@ public abstract class Page {
 
             highlightElement(driver(), webElement.get(0));
         }catch (Exception e){
+
             throw new NoSuchElementException("webLink: Unable to find the element, " + by.toString());
         }
         return new WebLink(webElement.get(0));

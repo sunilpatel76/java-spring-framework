@@ -1,35 +1,78 @@
 <!DOCTYPE html>
-
 <html>
-<head>
-    <title>Automation Report</title>
-    <link rel="stylesheet" href="html-report.css" type="text/css">
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>Dashboard</title>
+    <link type="text/css" href="html-report.css" rel="stylesheet"/>
+    <script type="text/javascript" src="reports.js"></script>
+    <script type="text/javascript" src="https://www.google.com/jsapi"></script>
+    <script type="text/javascript" src="jquery-1.7.1.min.js"></script>
+    <script type='text/javascript'>
+    </script>
 </head>
+
 <body>
-<div class="header">
-    <span clas="header-title-font">Test Automation Results</span>
-    <br>
-    <span class="top-banner-font-1">Test Results</span>
+<div class="banner">
+    <span>Execution Reports</span>
 </div>
-<div class="left-navigation">
-    <div class="left-navigation-header">
+<div class="banner-date">
+    <span>Date: <script>displayDate()</script></span>
+</div>
+
+<div class="navigation">
+    <div class="main-panel-header navigation-header">
         <span>Test Suites</span>
-        <a href="#" title="Collapse/Expand All">
-            <img class="collapse-all" src="images/collapseall.gif">
+        <a href="#" class="collapse-all-link" title="Collapse/Expand">
+            <img class="collapse-all-icon" src="img/collapse.gif"/>
         </a>
     </div>
-    <div class="test-suite">
-        <div class="test-suite-header">
-            <span>Sunil Patel</span>
+
+    <div class="suite">
+        <div class="suite-windows">
+            <div class="suite-window-top">
+                <a href="#" class="navigator-link" panel-name="suite-TestSuite">
+                    <span class="suite-name border-passed">Test Package</span>
+                </a>
+            </div>
+            <div class="navigator-suite-content">
+                <div class="suite-windows-title">
+                    <span>Test</span>
+                </div>
+                <div class="suite-windows-content">
+                    <ul>
+                        <li>
+                            <a href="#" class="navigator-link" panel-name="XMLTestSuite">
+                                <span>Module-A</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" class="navigator-link" panel-name="XMLTestSuite">
+                                <span>Module-B</span>
+                            </a>
+                        </li>
+                    </ul>
+
+                </div>
+
+            </div>
         </div>
 
     </div>
 </div>
+
 <div class="wrapper">
-    <div class="main-panel-header rounded-window-top">
-        <img src="images/passed.png">
-        <span>Sunil Patel</span>
+    <div panel-name="XMLTestSuite" class="panel">
+        <div class="main-panel-header rounded-window-top">
+            <span class="header-content">C:\Users\Sunil\Google Drive\Projects\SeleniumGrid\src\main\resources\testNG.xml</span>
+        </div>
+        <div class="main-panel-content rounded-window-bottom">
+            <pre>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;</pre>
+        </div> <!-- main-panel-content rounded-window-bottom -->
     </div>
+
+</div>
+
+<div class="footer">
 </div>
 
 </body>
