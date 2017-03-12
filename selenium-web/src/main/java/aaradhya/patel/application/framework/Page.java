@@ -5,8 +5,8 @@ import aaradhya.patel.application.framework.keyword.WebEdit;
 import aaradhya.patel.application.framework.keyword.WebLink;
 import aaradhya.patel.application.framework.keyword.WebList;
 import com.gargoylesoftware.htmlunit.ElementNotFoundException;
-import org.apache.log4j.LogManager;
-import org.apache.log4j.Logger;
+//import org.apache.log4j.LogManager;
+//import org.apache.log4j.Logger;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
@@ -23,7 +23,7 @@ import java.util.concurrent.TimeUnit;
 public abstract class Page {
 
     private static ThreadLocal<WebDriver> threadLocal = new ThreadLocal<WebDriver>();
-    private static final Logger logger = LogManager.getLogger(Page.class);
+//    private static final Logger logger = LogManager.getLogger(Page.class);
 
     private static final int MAX_WAIT = 45;
     private static final int MIN_WAIT = 15;
@@ -31,14 +31,16 @@ public abstract class Page {
 
 
     public static Page browser(final String browser){
-        logger.error("XXX browser");
+//        logger.error("XXX browser");
         return new PageBrowser(browser);
     }
 
     private static class PageBrowser extends Page implements Serializable {
 
         private WebDriver webDriver;
+
         public PageBrowser(String browser){
+
             if (browser.isEmpty())
                 throw new IllegalArgumentException("cannot open browser while browser is null");
 
@@ -59,9 +61,11 @@ public abstract class Page {
         }
         driver().get(url);
     }
+
     public static String getCurrentUrl(){
         return driver().getCurrentUrl();
     }
+
     public static void quit(){
         if (driver() != null) driver().quit();
     }
@@ -71,7 +75,7 @@ public abstract class Page {
     }
 
     public static WebLink webLink(final By by){
-        logger.info("INFO");
+//        logger.info("INFO");
         List<WebElement> webElement = null;
         try {
             webElement=(new WebDriverWait(driver(), MAX_WAIT, 1000))
@@ -84,6 +88,7 @@ public abstract class Page {
         }
         return new WebLink(webElement.get(0));
     }
+
     public static WebEdit webEdit(final By by){
         WebElement webElement = null;
         try {
@@ -97,6 +102,7 @@ public abstract class Page {
         }
         return new WebEdit(webElement);
     }
+
     public static WebButton webButton(final By by){
         WebElement webElement = null;
         try {
@@ -108,6 +114,7 @@ public abstract class Page {
         }
         return new WebButton(webElement);
     }
+
     public static WebList webList(final By by){
         WebElement webElement = null;
         try {
@@ -123,6 +130,5 @@ public abstract class Page {
         if (driver() != null)
             ((JavascriptExecutor) driver).executeScript("arguments[0].style.border='1px outset red'", element);
     }
-
 
 }
