@@ -25,6 +25,7 @@ public class LoginPageTest extends AbstractWebApplication {
 
     @BeforeClass
     public void setUp(){
+        System.setProperty("webdriver.chrome.driver", "chromedriver.exe");
         Page.browser(webBrowser).navigate(applicationURL);
     }
 

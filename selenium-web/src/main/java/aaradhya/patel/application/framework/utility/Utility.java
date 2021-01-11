@@ -8,7 +8,7 @@ public abstract class Utility {
             "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
 
     public static String getRandomString(int sLength){
-        StringBuffer rndString = new StringBuffer();
+        StringBuilder rndString = new StringBuilder();
         for (int i =0; i< sLength; i++){
             int rndNum = getRandomNumber();
             char ch = CHARACTERS.charAt(rndNum);
@@ -23,7 +23,7 @@ public abstract class Utility {
         return ((randomInt -1) == -1) ? randomInt : randomInt-1;
     }
 
-    public static String generateEmailAddress(){
+    public static String generateEmailAddress(){//2019102795700@dummy.com->cabj
         return getRandomString(5)+ "." + getRandomString(5) + "@dummy.com";
     }
 
